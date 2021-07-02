@@ -2,7 +2,7 @@
 function AddDiceButtons({ addDie }) {
 
     return (
-        <div class="button-list">
+        <div className="button-list">
             <button onClick={() => addDie(6)}>Add 6 sided Die</button>
             <button onClick={() => addDie(8)}>Add 8 sided Die</button>
             <button onClick={() => addDie(10)}>Add 10 sided Die</button>
