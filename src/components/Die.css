@@ -1,42 +1,17 @@
+.die-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
 .die {
     font-size: 75px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
-}
-
-.side-6 {
     border: 1px solid black;
     height: 100px;
     width: 100px;
-    border-radius: 10px;    
-}
-
-.side-20:before {
-    content: " ";
-    width: 0; height: 0;
-    border-bottom: 30px solid #6C6;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-    position: absolute;
-    top: -30px;
-}
-
-.side-20 {
-    margin-top: 30px;
-    width: 104px;
-    height: 60px;
-    background-color: #6C6;
-    position: relative;
-}
-
-.side-20:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    bottom: -30px;
-    border-top: 30px solid #6C6;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    border-radius: 10px;   
 }
