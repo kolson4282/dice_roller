@@ -27,7 +27,10 @@ function App() {
       newDiceList = diceList.filter((die) => die.id !== id)
       setDiceList(newDiceList);
     }
+  }
 
+  const clearAll = () => {
+    setDiceList([]);
   }
 
   const addDie = (sides) => {
@@ -48,6 +51,7 @@ function App() {
       <DiceList diceList={diceList} removeDie = {removeDie}/>
       <AddDiceButtons addDie = {addDie}></AddDiceButtons>
       <button onClick={diceRoll}>Roll Dice</button>
+      <button onClick={clearAll}>Clear All Dice</button>
       <p>Total = {getTotal()}</p>
     </div>
   );
