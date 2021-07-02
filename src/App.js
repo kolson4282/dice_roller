@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import DiceList from './components/DiceList';
 
 function App() {
+  const [diceList, setDiceList] = useState([{ sides: 6, value: 1 }, {sides: 20, value: 1}])
+
+  const diceRoll = () => {
+    let newDiceList = [];
+    diceList.forEach(die => {
+      let newDie = die;
+      newDie.value = Math.floor(Math.random()*newDie.sides) + 1;
+      newDiceList.push(die);
+    })
+    setDiceList(newDiceList);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="app">
+      <DiceList diceList={diceList} />
+      <button onClick={diceRoll}>Roll Dice</button>
     </div>
   );
 }
