@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
+import AddDiceButtons from './components/AddDiceButtons';
 import DiceList from './components/DiceList';
 
 function App() {
-  const [diceList, setDiceList] = useState([{ sides: 6, value: 1 }, { sides: 8, value: 1 }, { sides: 10, value: 1 }, { sides: 12, value: 1 }, { sides: 20, value: 1 }, { sides: 100, value: 1 }])
+  const [diceList, setDiceList] = useState([])
+  const [counter, setCounter]=useState(1);
+
+  useEffect(() => {
+    addDie(6);
+  }, []);
 
   const diceRoll = () => {
     let newDiceList = [];
@@ -15,6 +21,20 @@ function App() {
     setDiceList(newDiceList);
   }
 
+  const removeDie = (id) => {
+    let newDiceList;
+    if (diceList.length > 0) {
+      newDiceList = diceList.filter((die) => die.id !== id)
+      setDiceList(newDiceList);
+    }
+
+  }
+
+  const addDie = (sides) => {
+    setDiceList([...diceList, {sides: sides, value: 1, id: counter}])
+    setCounter(counter + 1);
+  }
+
   const getTotal = () => {
     let total = 0;
     diceList.forEach(die => {
@@ -24,8 +44,9 @@ function App() {
   }
 
   return (
-    <div class="app">
-      <DiceList diceList={diceList} />
+    <div className="app">
+      <DiceList diceList={diceList} removeDie = {removeDie}/>
+      <AddDiceButtons addDie = {addDie}></AddDiceButtons>
       <button onClick={diceRoll}>Roll Dice</button>
       <p>Total = {getTotal()}</p>
     </div>

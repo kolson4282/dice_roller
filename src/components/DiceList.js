@@ -1,10 +1,10 @@
 
 import Die from "./Die";
 
-function DiceList({ diceList }) {
+function DiceList({ diceList, removeDie }) {
     return (
-        <div class="dice-list">
-            {diceList.map(die => <Die die={die} />)}
+        <div className="dice-list">
+            {diceList.map((die) => <Die die={die} key={die.id} removeDie={() => removeDie(die.id)} />)}
         </div>
     );
 }

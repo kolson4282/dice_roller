@@ -1,5 +1,6 @@
 .die-container {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     text-align: center;
     margin: 10px;
 }
