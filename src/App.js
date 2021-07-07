@@ -48,11 +48,11 @@ function App() {
 
   return (
     <div className="app">
-      <DiceList diceList={diceList} removeDie={removeDie} />
       <AddDiceButtons addDie={addDie}></AddDiceButtons>
       <button onClick={diceRoll}>Roll Dice</button>
       <button onClick={clearAllDice}>Clear All</button>
       <p>Total = {getTotal()}</p>
+      <DiceList diceList={diceList} removeDie={removeDie} />
     </div>
   );
 }

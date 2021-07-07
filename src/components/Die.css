@@ -1,7 +1,7 @@
 .die-container {
     display: grid;
     grid-template-columns: 100px;
-    grid-template-rows: 50px 100px; /*Change to 100px when removing die label */
+    grid-auto-rows: minmax(100px, auto); /*Change to 100px when removing die label */
     grid-gap: 20px;
     text-align: center;
 }

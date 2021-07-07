@@ -1,4 +1,6 @@
 
+import './AddDiceButtons.css';
+
 function AddDiceButtons({ addDie }) {
 
     return (
