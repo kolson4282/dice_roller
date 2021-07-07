@@ -1,0 +1,9 @@
+
+.dice-list {
+    margin: 45px auto;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 200px; /*Change to 100px when removing die label */
+    grid-gap: 15px;
+  }

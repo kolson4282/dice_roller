@@ -1,5 +1,6 @@
 
 import Die from "./Die";
+import './DiceList.css';
 
 function DiceList({ diceList, removeDie }) {
     return (

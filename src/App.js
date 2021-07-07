@@ -5,7 +5,7 @@ import DiceList from './components/DiceList';
 
 function App() {
   const [diceList, setDiceList] = useState([])
-  const [counter, setCounter]=useState(1);
+  const [counter, setCounter] = useState(1);
 
   useEffect(() => {
     addDie(6);
@@ -33,8 +33,12 @@ function App() {
     setDiceList([]);
   }
 
+  const clearAllDice = () => {
+    setDiceList([]);
+  }
+
   const addDie = (sides) => {
-    setDiceList([...diceList, {sides: sides, value: 1, id: counter}])
+    setDiceList([...diceList, { sides: sides, value: 1, id: counter }])
     setCounter(counter + 1);
   }
 
@@ -48,10 +52,14 @@ function App() {
 
   return (
     <div className="app">
-      <DiceList diceList={diceList} removeDie = {removeDie}/>
-      <AddDiceButtons addDie = {addDie}></AddDiceButtons>
+      <DiceList diceList={diceList} removeDie={removeDie} />
+      <AddDiceButtons addDie={addDie}></AddDiceButtons>
       <button onClick={diceRoll}>Roll Dice</button>
+<<<<<<< HEAD
       <button onClick={clearAll}>Clear All Dice</button>
+=======
+      <button onClick={clearAllDice}>Clear All</button>
+>>>>>>> fe83a479595e0ec2691ce7f43e7819932c3a1db7
       <p>Total = {getTotal()}</p>
     </div>
   );
