@@ -29,10 +29,6 @@ function App() {
     }
   }
 
-  const clearAll = () => {
-    setDiceList([]);
-  }
-
   const clearAllDice = () => {
     setDiceList([]);
   }
@@ -55,11 +51,7 @@ function App() {
       <DiceList diceList={diceList} removeDie={removeDie} />
       <AddDiceButtons addDie={addDie}></AddDiceButtons>
       <button onClick={diceRoll}>Roll Dice</button>
-<<<<<<< HEAD
-      <button onClick={clearAll}>Clear All Dice</button>
-=======
       <button onClick={clearAllDice}>Clear All</button>
->>>>>>> fe83a479595e0ec2691ce7f43e7819932c3a1db7
       <p>Total = {getTotal()}</p>
     </div>
   );
